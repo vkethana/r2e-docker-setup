@@ -32,7 +32,7 @@ def main():
     all_repos = all_repos[start:end]
 
     # temporary bugfix (these are all files, not directories)
-    blocked_directories = ['.git', '.github', '.gitignore', 'LICENSE', 'README.md', 'assets', 'logs', 'poetry.lock']        
+    blocked_directories = ['.git', '.github', '.gitignore', 'LICENSE', 'README.md', 'assets', 'logs', 'poetry.lock', 'pyproject.toml']        
     all_repos = [i for i in all_repos if i not in blocked_directories]
 
     results = run_tasks_in_parallel_iter(
