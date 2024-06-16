@@ -127,6 +127,8 @@ def run_tasks_in_parallel_iter(
 
     mode = "spawn" if use_spawn else "fork"
 
+    print("Running tasks =", tasks)
+    
     with ProcessPool(
         # initializer=initializer if platform.system() != "Darwin" else None,  # type: ignore
         max_workers=num_workers,
