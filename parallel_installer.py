@@ -33,7 +33,7 @@ def main():
 
     # temporary bugfix (these are all files, not directories)
     blocked_directories = ['.git', '.github', '.gitignore', 'LICENSE', 'README.md', 'assets', 'logs', 'poetry.lock']        
-    all_repos = [i for i in all_repos if i not in blocked_filenames]
+    all_repos = [i for i in all_repos if i not in blocked_directories]
 
     results = run_tasks_in_parallel_iter(
         install_single_repo,
