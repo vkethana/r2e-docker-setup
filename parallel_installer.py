@@ -30,6 +30,7 @@ def main():
 
     all_repos = sorted(os.listdir(REPOS_DIR))
     all_repos = all_repos[start:end]
+    all_repos = [i for i in all_repos if i != "pyproject.toml"] # temporary bugfix / test
 
     results = run_tasks_in_parallel_iter(
         install_single_repo,
